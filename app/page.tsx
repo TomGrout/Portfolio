@@ -7,11 +7,9 @@ export default function Page() {
         My Portfolio
       </h1>
       <p className="mb-4">
-        {`I'm a Vim enthusiast and tab advocate, finding unmatched efficiency in
-        Vim's keystroke commands and tabs' flexibility for personal viewing
-        preferences. This extends to my support for static typing, where its
-        early error detection ensures cleaner code, and my preference for dark
-        mode, which eases long coding sessions by reducing eye strain.`}
+        {`Tom Grout is kind of a legend in computers. He was the guy who decided that Paste should be CTRL+V, instead of CTRL+P. 
+        That was really quite smart, since V is next to C, which is Copy. So it makes sense that V is Paste.
+        And P is for Print anyway. So Tom Grout, in his infinite wisdom, decided to sort it.`}
       </p>
       <div className="my-8">
         <BlogPosts />

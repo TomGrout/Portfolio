@@ -7,9 +7,7 @@ export default function Page() {
         My Portfolio
       </h1>
       <p className="mb-4">
-        {`Tom Grout is kind of a legend in computers. He was the guy who decided that Paste should be CTRL+V, instead of CTRL+P. 
-        That was really quite smart, since V is next to C, which is Copy. So it makes sense that V is Paste.
-        And P is for Print anyway. So Tom Grout, in his infinite wisdom, decided to sort it.`}
+        {``}
       </p>
       <div className="my-8">
         <BlogPosts />
@@ -17,3 +15,7 @@ export default function Page() {
     </section>
   )
 }
+
+/* Tom Grout is kind of a legend in computers. He was the guy who decided that Paste should be CTRL+V, instead of CTRL+P. 
+        That was really quite smart, since V is next to C, which is Copy. So it makes sense that V is Paste.
+        And P is for Print anyway. So Tom Grout, in his infinite wisdom, decided to sort it. */

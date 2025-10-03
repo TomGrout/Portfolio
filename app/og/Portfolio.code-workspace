@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "Portfolio-Vercel",
+			"path": "../../.."
+		},
+		{
+			"name": "next-app-router-playground",
+			"path": "../../../../next-app-router-playground"
+		}
+	],
+	"settings": {}
+}

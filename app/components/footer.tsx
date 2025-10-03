@@ -24,10 +24,10 @@ export default function Footer() {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="/rss"
+            href="https://www.linkedin.com/in/tom-grout-71a91b326/"
           >
             <ArrowIcon />
-            <p className="ml-2 h-7">rss</p>
+            <p className="ml-2 h-7">linkedin</p>
           </a>
         </li>
         <li>
@@ -46,7 +46,7 @@ export default function Footer() {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://vercel.com/TomGrout/Portfolio"
+            href="https://vercel.com/frameworks/nextjs"
           >
             <ArrowIcon />
             <p className="ml-2 h-7">view source</p>

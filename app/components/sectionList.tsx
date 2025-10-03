@@ -17,20 +17,27 @@ type Section = {
 };
 
 const tagColors: Record<string, string> = {
-  "C++": "border-yellow-400 text-yellow-400",
-  "Python": "border-red-400 text-red-400",
-  "C#": "border-red-400 text-red-400",
-  "JavaScript": "border-red-400 text-red-400",
-  "TypeScript": "border-red-400 text-red-400",
-  "PHP": "border-red-400 text-red-400",
-  "HTML": "border-red-400 text-red-400",
-  "CSS Bootstrap": "border-red-400 text-red-400",
-  "CSS Tailwind": "border-cyan-400 text-cyan-400",
-  "React": "border-blue-400 text-blue-400",
-  "Next.js": "border-gray-300 text-gray-300",
-  "Vue.js": "border-green-400 text-green-400",
-  "Three.js": "border-blue-600 text-blue-600",
-  "Vite": "border-purple-400 text-purple-400",
+  // Programming languages
+  "C++": "border-pink-500 text-pink-500",           // #f34b7d → closest to pink-500
+  "C#": "border-green-700 text-green-700",          // #178600 → closest to green-700
+  "Python": "border-blue-600 text-blue-600",        // #3572A5 → closest to blue-600
+  "CMake": "border-red-600 text-red-600",           // #DA3434 → closest to red-600
+  "JavaScript": "border-yellow-400 text-yellow-400",// #f1e05a → matches yellow-400
+  "HTML": "border-orange-600 text-orange-600",      // #e34c26 → closest to orange-600
+  "CSS": "border-purple-700 text-purple-700",       // #663399 → closest to purple-700
+  "Clojure": "border-rose-500 text-rose-500",       // #db5855 → close to rose-500
+  "TypeScript": "border-blue-500 text-blue-500",    // #3178c6 → close to blue-500
+  "Vue": "border-green-500 text-green-500",         // #41b883 → green-500
+  "PHP": "border-indigo-700 text-indigo-700",       // #4F5D95 → closest to indigo-700
+
+  // Frameworks / extras 
+  "CSS Bootstrap": "border-purple-400 text-purple-400", 
+  "CSS Tailwind": "border-cyan-400 text-cyan-400", 
+  "React": "border-sky-400 text-sky-400",         // React brand blue
+  "Next.js": "border-gray-400 text-gray-400",     // Neutral for Next.js
+  "Vue.js": "border-emerald-500 text-emerald-500", // Variant of Vue green
+  "Three.js": "border-blue-800 text-blue-800",    // Dark blue
+  "Vite": "border-violet-500 text-violet-500",    // Purple/violet brand
 };
 
 export default function SectionList({ sections, fullWidth = false }: { sections: Section[]; fullWidth?: boolean }) {
@@ -43,21 +50,50 @@ export default function SectionList({ sections, fullWidth = false }: { sections:
           </div>
 
           <div className={`grid gap-5 ${fullWidth ? "grid-cols-1" : "grid-cols-1 lg:grid-cols-2"}`}>            {section.items.map((item) => (
-              <Link
-                href={`/${item.slug}`}
-                key={item.name}
-                className={`group flex flex-col gap-1 rounded-lg px-5 py-3 hover:opacity-90 ${item.color || "bg-gray-900"}`}
-              >
-                <div className="flex items-center justify-between font-medium text-gray-200 group-hover:text-gray-50">
-                  {item.name} <LinkStatus />
+            <Link
+              key={item.name}
+              href={`/${item.slug}`}
+              className={`group flex flex-col gap-2 rounded-lg px-5 py-3 hover:opacity-90 ${item.color || "bg-gray-900"}`}
+            >
+              <div className="flex items-start gap-4">
+                {/* Left side: text */}
+                <div className="flex-1">
+                  <div className="flex items-center justify-between font-medium text-gray-200 group-hover:text-gray-50">
+                    {item.name} <LinkStatus />
+                  </div>
+
+                  {item.description && (
+                    <div className="mt-1 line-clamp-3 text-[13px] text-gray-400 group-hover:text-gray-300">
+                      {item.description}
+                    </div>
+                  )}
                 </div>
 
-                {item.description ? (
-                  <div className="line-clamp-3 text-[13px] text-gray-500 group-hover:text-gray-300">
-                    {item.description}
-                  </div>
-                ) : null}
-              </Link>
+                {/* Right side: image */}
+                {item.image && (
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-16 h-16 object-cover rounded-md border border-gray-700"
+                  />
+                )}
+              </div>
+
+              {/* Tags row */}
+              {item.tags && (
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {item.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className={`px-2 py-[1px] text-xs rounded-md border ${tagColors[tag] || "border-gray-500 text-gray-400"}`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </Link>
+
             ))}
           </div>
         </div>

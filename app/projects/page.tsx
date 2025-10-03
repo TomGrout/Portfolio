@@ -1,4 +1,4 @@
-import ProjectsList from 'app/components/projectsList'
+import SectionList from 'app/components/sectionList'
 import projectsData from './projectsData';
 import { Boundary } from '../../ui/boundary';
 
@@ -19,7 +19,7 @@ export default function ProjectsPage() {
         kind="solid"
         className="flex flex-col gap-9"
       >
-        <ProjectsList sections={projectsData} fullWidth/>
+        <SectionList sections={projectsData} fullWidth/>
       </Boundary>
     </>
   );

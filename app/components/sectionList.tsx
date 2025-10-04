@@ -19,7 +19,7 @@ type Section = {
 const tagColors: Record<string, string> = {
   // Programming languages
   "C++": "border-pink-500 text-pink-500",           // #f34b7d → closest to pink-500
-  "C#": "border-green-700 text-green-700",          // #178600 → closest to green-700
+  "C#": "border-violet-500 text-violet-500",          // #178600 → closest to green-700
   "Python": "border-blue-600 text-blue-600",        // #3572A5 → closest to blue-600
   "CMake": "border-red-600 text-red-600",           // #DA3434 → closest to red-600
   "JavaScript": "border-yellow-400 text-yellow-400",// #f1e05a → matches yellow-400
@@ -31,13 +31,21 @@ const tagColors: Record<string, string> = {
   "PHP": "border-indigo-700 text-indigo-700",       // #4F5D95 → closest to indigo-700
 
   // Frameworks / extras 
-  "CSS Bootstrap": "border-purple-400 text-purple-400", 
-  "CSS Tailwind": "border-cyan-400 text-cyan-400", 
+  "Bootstrap": "border-purple-400 text-purple-400", 
+  "Tailwind": "border-cyan-400 text-cyan-400", 
   "React": "border-sky-400 text-sky-400",         // React brand blue
-  "Next.js": "border-gray-400 text-gray-400",     // Neutral for Next.js
+  "Next.js": "border-gray-300 text-gray-300",     // Neutral for Next.js
   "Vue.js": "border-emerald-500 text-emerald-500", // Variant of Vue green
-  "Three.js": "border-blue-800 text-blue-800",    // Dark blue
-  "Vite": "border-violet-500 text-violet-500",    // Purple/violet brand
+  "Three.js": "border-blue-400 text-blue-400",    // Dark blue
+  "Vite": "border-yellow-300 text-yellow-300",    // Purple/violet brand
+
+  // DB & tools
+  "MongoDB": "border-green-600 text-green-600",   // MongoDB green
+  "Git": "border-orange-500 text-orange-500",           // Git orange
+  "GitHub": "border-gray-700 text-gray-700",      // Neutral for GitHub
+  "Docker": "border-blue-700 text-blue-700",      // Docker blue
+  "Linux": "border-orange-500 text-orange-500",   // Linux orange
+
 };
 
 export default function SectionList({ sections, fullWidth = false }: { sections: Section[]; fullWidth?: boolean }) {
@@ -45,7 +53,7 @@ export default function SectionList({ sections, fullWidth = false }: { sections:
     <div className="flex flex-col gap-9">
       {sections.map((section) => (
         <div key={section.name} className="flex flex-col gap-3">
-          <div className="font-mono text-xs font-semibold tracking-wider text-gray-700 uppercase">
+          <div className="font-mono text-xs font-semibold tracking-wider text-gray-300 uppercase">
             {section.name}
           </div>
 
@@ -53,7 +61,7 @@ export default function SectionList({ sections, fullWidth = false }: { sections:
             <Link
               key={item.name}
               href={`/${item.slug}`}
-              className={`group flex flex-col gap-2 rounded-lg px-5 py-3 hover:opacity-90 ${item.color || "bg-gray-900"}`}
+              className={`group flex flex-col gap-2 rounded-lg px-5 py-3 hover:opacity-80 ${item.color || "bg-gray-900"}`}
             >
               <div className="flex items-start gap-4">
                 {/* Left side: text */}
@@ -85,7 +93,7 @@ export default function SectionList({ sections, fullWidth = false }: { sections:
                   {item.tags.map((tag) => (
                     <span
                       key={tag}
-                      className={`px-2 py-[1px] text-xs rounded-md border ${tagColors[tag] || "border-gray-500 text-gray-400"}`}
+                      className={`px-2 py-[1px] text-xs rounded-md border ${tagColors[tag] || "border-gray-500 text-gray-400"} bg-black/30`}
                     >
                       {tag}
                     </span>

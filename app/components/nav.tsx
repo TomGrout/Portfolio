@@ -3,15 +3,19 @@ import Link from 'next/link'
 const navItems = {
   '/': {
     name: 'home',
+    hoverColour: 'hover:text-blue-500',
   },
   '/projects': {
     name: 'projects',
+    hoverColour: 'hover:text-green-500',
   },
   '/university':{
     name: 'university',
+    hoverColour: 'hover:text-purple-500',
   },
   '/about': {
     name: 'about',
+    hoverColour: 'hover:text-orange-500',
   },
 }
 
@@ -24,13 +28,12 @@ export function Navbar() {
           id="nav"
         >
           <div className="flex flex-row space-x-0 pr-10">
-            {Object.entries(navItems).map(([path, { name }]) => {
+            {Object.entries(navItems).map(([path, { name, hoverColour} ]) => {
               return (
                 <Link
                   key={path}
                   href={path}
-                  className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1"
-                >
+                  className={`transition-all ${hoverColour} dark:hover:${hoverColour} flex align-middle relative py-1 px-2 m-1`}                >
                   {name}
                 </Link>
               )

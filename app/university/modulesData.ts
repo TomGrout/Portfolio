@@ -3,7 +3,7 @@ const modulesData = [
     name: "Year 1",
     items: [
       { name: "Software Projects", slug: "software-projects", description: "", color: "bg-indigo-700" },
-      { name: "Programming for Computer Science", slug: "programming", description: "", color: "bg-emerald-700" },
+      { name: "Programming for Computer Science", slug: "programming", description: "", color: "bg-emerald-800" },
       { name: "Fundamentals of Mathematics and Computer Architectures", slug: "fundamentals", description: "", color: "bg-rose-700" },
       { name: "Databases and the Web", slug: "databases-web", description: "", color: "bg-cyan-700" },
     ],

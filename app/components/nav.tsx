@@ -3,11 +3,11 @@ import Link from 'next/link'
 const navItems = {
   '/': {
     name: 'home',
-    hoverColour: 'hover:text-blue-500',
+    hoverColour: 'hover:text-cyan-500',
   },
   '/projects': {
     name: 'projects',
-    hoverColour: 'hover:text-green-500',
+    hoverColour: 'hover:text-blue-600',
   },
   '/university':{
     name: 'university',
@@ -15,7 +15,7 @@ const navItems = {
   },
   '/about': {
     name: 'about',
-    hoverColour: 'hover:text-orange-500',
+    hoverColour: 'hover:text-pink-500',
   },
 }
 

@@ -98,9 +98,9 @@ const Label = ({
   return (
     <div
       className={clsx(
-        'px-1.5 font-mono leading-4 font-medium tracking-widest uppercase ring-6 ring-gray-950',
+        'px-1.5 font-mono leading-4 font-medium tracking-widest uppercase ring-6 ring-white dark:ring-black',
         {
-          'bg-gray-800 text-gray-500': color === 'gray',
+          'bg-gray-100 dark:bg-gray-800 text-gray-500': color === 'gray',
           'bg-pink-600 text-pink-200': color === 'pink',
           'bg-blue-600 text-blue-200': color === 'blue',
           'bg-cyan-500 text-cyan-100': color === 'cyan',

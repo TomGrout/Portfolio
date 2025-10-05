@@ -34,10 +34,10 @@ const tagColors: Record<string, string> = {
   "Bootstrap": "border-purple-400 text-purple-400", 
   "Tailwind": "border-cyan-400 text-cyan-400", 
   "React": "border-sky-400 text-sky-400",         // React brand blue
-  "Next.js": "border-gray-300 text-gray-300",     // Neutral for Next.js
+  "Next.js": "border-gray-700 text-gray-700 dark:border-gray-300 dark:text-gray-300",     // Neutral for Next.js
   "Vue.js": "border-emerald-500 text-emerald-500", // Variant of Vue green
   "Three.js": "border-blue-400 text-blue-400",    // Dark blue
-  "Vite": "border-yellow-300 text-yellow-300",    // Purple/violet brand
+  "Vite": "border-yellow-500 text-yellow-500",    // Purple/violet brand
 
   // DB & tools
   "MongoDB": "border-green-600 text-green-600",   // MongoDB green
@@ -53,7 +53,7 @@ export default function SectionList({ sections, fullWidth = false }: { sections:
     <div className="flex flex-col gap-9">
       {sections.map((section) => (
         <div key={section.name} className="flex flex-col gap-3">
-          <div className="font-mono text-xs font-semibold tracking-wider text-gray-300 uppercase">
+          <div className="font-mono text-xs font-semibold tracking-wider text-gray-950 dark:text-gray-300 uppercase">
             {section.name}
           </div>
 
@@ -61,17 +61,17 @@ export default function SectionList({ sections, fullWidth = false }: { sections:
             <Link
               key={item.name}
               href={`/${item.slug}`}
-              className={`group flex flex-col gap-2 rounded-lg px-5 py-3 hover:opacity-80 ${item.color || "bg-gray-900"}`}
+              className={`group flex flex-col gap-2 rounded-lg px-5 py-3 hover:opacity-80 ${item.color}`}
             >
               <div className="flex items-start gap-4">
                 {/* Left side: text */}
                 <div className="flex-1">
-                  <div className="flex items-center justify-between font-medium text-gray-200 group-hover:text-gray-50">
+                  <div className="flex items-center justify-between font-medium  text-gray-950 dark:text-gray-200 group-hover:text-gray-50">
                     {item.name} <LinkStatus />
                   </div>
 
                   {item.description && (
-                    <div className="mt-1 line-clamp-3 text-[13px] text-gray-400 group-hover:text-gray-300">
+                    <div className="mt-1 line-clamp-3 text-[13px]  text-gray-900 dark:text-gray-400 group-hover:text-gray-300">
                       {item.description}
                     </div>
                   )}
@@ -93,7 +93,7 @@ export default function SectionList({ sections, fullWidth = false }: { sections:
                   {item.tags.map((tag) => (
                     <span
                       key={tag}
-                      className={`px-2 py-[1px] text-xs rounded-md border ${tagColors[tag] || "border-gray-500 text-gray-400"} bg-black/30`}
+                      className={`px-2 py-[1px] text-xs rounded-md border ${tagColors[tag] || "border-gray-500 text-gray-400"} bg-black/10 dark:bg-black/30`}
                     >
                       {tag}
                     </span>

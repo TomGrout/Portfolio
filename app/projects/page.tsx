@@ -19,7 +19,7 @@ export default function ProjectsPage() {
         kind="solid"
         className="flex flex-col gap-9"
       >
-        <SectionList sections={projectsData} fullWidth/>
+        <SectionList sections={projectsData} fullWidth basePath='/projects'/>
       </Boundary>
     </>
   );

@@ -16,7 +16,7 @@ export default function ModulesPage() {
         kind="solid"
         className="flex flex-col gap-9"
       >
-        <SectionList sections={modulesData} />
+        <SectionList sections={modulesData} basePath='/modules'/>
       </Boundary>
     </>
   );

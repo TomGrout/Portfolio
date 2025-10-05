@@ -1,6 +1,6 @@
 // app/projects/[slug]/page.tsx
-import ProjectPage from '@components/projectPage';
-import projectsData from '@projects/projectsData';
+import ProjectPage from 'app/components/projectPage';
+import projectsData from 'app/projects/projectsData';
 import { notFound } from 'next/navigation';
 
 export default function ProjectDetails({ params }: { params: { slug: string } }) {

@@ -27,9 +27,9 @@
     "strictNullChecks": true,
     "paths": {
       "@/*": ["./*"],
-      "@components/*": ["./app/components/*"],
-      "@projects/*": ["./app/projects/*"],
-      "@ui/*": ["./app/ui/*"]
+      "@components/*": ["/app/components/*"],
+      "@projects/*": ["/app/projects/*"],
+      "@ui/*": ["/app/ui/*"]
     }
   },
   "include": [

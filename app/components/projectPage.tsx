@@ -1,4 +1,4 @@
-import { tagColours } from '../ui/colourMap';
+import { tagColours } from '../../ui/colourMap';
 
 export default function ProjectPage({
   title,

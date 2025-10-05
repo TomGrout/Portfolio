@@ -1,5 +1,5 @@
 export const tagColours: Record<string, string> = {
-  
+
   // Programming languages
   "C++": "border-pink-500 text-pink-500",           // #f34b7d → closest to pink-500
   "C#": "border-violet-500 text-violet-500",          // #178600 → closest to green-700

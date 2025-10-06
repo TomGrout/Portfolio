@@ -9,7 +9,7 @@ const navItems = {
     name: 'projects',
     hoverColour: 'hover:text-blue-600',
   },
-  '/university':{
+  '/modules':{
     name: 'university',
     hoverColour: 'hover:text-purple-500',
   },

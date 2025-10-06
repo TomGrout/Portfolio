@@ -1,4 +1,5 @@
 import { tagColours } from '../../ui/colourMap';
+import ImageCarousel from './imageCarousel';
 
 export default function ProjectPage({
   title,
@@ -13,18 +14,18 @@ export default function ProjectPage({
   description?: string;
   keyProjects?: string[];
   learningOutcomes?: string[];
-  images?: string[];
+  images?: { src: string; desc: string }[];
 }) {
   return (
-    <div className="mx-auto max-w-4xl space-y-8">
+    <div className="space-y-8">
       {/* Title and tags */}
       <header className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">{title}</h1>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 m-5">
           {tags.map((tag) => (
             <span
               key={tag}
-              className={`text-sm font-medium border rounded-full px-2 py-0.5 ${tagColours[tag] || 'border-gray-400 text-gray-400'}`}
+              className={`text-sm font-medium border rounded-md px-2 py-0.5 ${tagColours[tag] || 'border-gray-400 text-gray-400'}`}
             >
               {tag}
             </span>
@@ -60,14 +61,10 @@ export default function ProjectPage({
         </section>
       )}
 
-      {/* Image carousel (to come later) */}
       {images.length > 0 && (
-        <section>
-          {/* placeholder until we build it */}
-          <div className="bg-gray-200 dark:bg-gray-800 rounded-lg h-64 flex items-center justify-center">
-            Image carousel coming soon
-          </div>
-        </section>
+        <div className="mb-4">
+          <ImageCarousel images={images} />
+        </div>
       )}
     </div>
   );

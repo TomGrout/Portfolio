@@ -1,15 +1,17 @@
 import { notFound } from "next/navigation";
-import ProjectPage from "app/components/projectPage";
-import projectsData from "app/projects/projectsData";
+import ProjectPage from "../../components/projectPage";
+import projectsData from "../projectsData";
 
-const allProjects = projectsData.flatMap((group) => group.items);
+const allProjects = projectsData.flatMap(group => group.items);
 
 export default async function ProjectDetails({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const project = allProjects.find((p) => p.slug === params.slug);
+  const { slug } = await params;               
+
+  const project = allProjects.find(p => p.slug === slug);
 
   if (!project) return notFound();
 
@@ -18,14 +20,13 @@ export default async function ProjectDetails({
       title={project.name}
       tags={project.tags ?? []}
       description={project.description ?? ""}
-    //   keyProjects={project.keyProjects ?? []}
-    //   learningOutcomes={project.learningOutcomes ?? []}
-    //   images={project.images ?? []}
+      // keyProjects={project.keyProjects ?? []}
+      // learningOutcomes={project.learningOutcomes ?? []}
+      images={project.images ?? []}
     />
   );
 }
 
-// Optional static generation
 export function generateStaticParams() {
-  return allProjects.map((p) => ({ slug: p.slug }));
+  return allProjects.map(p => ({ slug: p.slug }));
 }

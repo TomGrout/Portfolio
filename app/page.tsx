@@ -1,4 +1,11 @@
 import { BlogPosts } from 'app/components/posts'
+import ImageCarousel from 'app/components/imageCarousel'
+
+let images=[
+  { src: "/featured/pocket.png", desc: "PocketGL" },
+  { src: "/featured/gbp-site.png", desc: "GBP" },
+  { src: "/featured/miros.png", desc: "MIROS" },
+]
 
 export default function Page() {
   return (
@@ -9,9 +16,13 @@ export default function Page() {
       <p className="mb-4">
         {" I'm a Computer Science student at Sheffield Hallam University. I love building web & desktop applications and learning about new programming things. This is my portfolio."}
       </p>
+      <div className="mb-4">
+        <ImageCarousel   images={[...images]} />
+      </div>
       <div className="my-8">
         <BlogPosts />
       </div>
+
     </section>
   )
 }

@@ -1,10 +1,10 @@
 import { BlogPosts } from 'app/components/posts'
 import ImageCarousel from 'app/components/imageCarousel'
 
-let images=[
-  { src: "/featured/pocket.png", desc: "PocketGL" },
-  { src: "/featured/gbp-site.png", desc: "GBP" },
-  { src: "/featured/miros.png", desc: "MIROS" },
+let homeImages=[
+  { src: "/images/pocket/games.png", desc: "Pocket Game Launcher" },
+  { src: "/images/gbp/home.png", desc: "GBP" },
+  { src: "/images/miros/miros.png", desc: "MIROS" },
 ]
 
 export default function Page() {
@@ -17,7 +17,7 @@ export default function Page() {
         {" I'm a Computer Science student at Sheffield Hallam University. I love building web & desktop applications and learning about new programming things. This is my portfolio."}
       </p>
       <div className="mb-4">
-        <ImageCarousel   images={[...images]} />
+        <ImageCarousel   images={ homeImages } />
       </div>
       <div className="my-8">
         <BlogPosts />
